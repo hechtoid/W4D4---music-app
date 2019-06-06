@@ -8,7 +8,7 @@ def current_user
 end
 
 def logged_in?
-	!!@current_user
+	!!current_user
 end
 
 def log_in_user!(user)

@@ -10,6 +10,32 @@
   </head>
 
   <body>
+
+<h1 style="font-family: sans-serif;">Music Application!!!!!!1!!!</h1>
+
+
+<br>
+<%if logged_in?%>
+	you are in, your email is <%=current_user.email%>
+	<form action="<%=session_url%>" method="POST">
+		<input type = "hidden" name="_method" value="DELETE">
+		<input type="submit" value="LOGOUT">
+		<%=auth_tokin%>
+	</form>
+<%else%>
+<h3>
+log-in <a style="border-radius: 25px; background-color: pink;" href=<%=new_session_url%>> here!</a>
+
+<br><br>
+make-a-new <a style="border-radius: 25px; background-color: pink;" href=<%=new_user_url%>>account here.</a>
+</h3>
+<%end%>
+
+<hr>
+<br>
+
+
+
     <%= yield %>
   </body>
 </html>
